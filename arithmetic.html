@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arithmetic Calc</title>
+  </head>
+  <body>
+    <label>Enter first number:</label>
+    <input type="text" id="firstNumber"><br>
+    <label>Enter second number:</label>
+    <input type="text" id="secondNumber"><br>
+    <button onclick="add()">Add +</button>
+    <button onclick="subtract()">Subtract -</button>
+    <button onclick="multiply()">Multiply *</button>
+    <button onclick="divide()">Divide /</button><br>
+    <label>Your result is:</label>
+    <input type="text" id="result" readonly>
+    
+    <script>
+      function add() {
+        let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+        let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+        document.getElementById('result').value = firstNumber + secondNumber;
+      }
+      
+      function subtract() {
+        let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+        let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+        document.getElementById('result').value = firstNumber - secondNumber;
+      }
+      
+      function multiply() {
+        let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+        let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+        document.getElementById('result').value = firstNumber * secondNumber;
+      }
+      
+      function divide() {
+        let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+        let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+        if (secondNumber == 0) {
+          document.getElementById('result').value = "You can't divide by zero, silly!";
+        } else {
+          document.getElementById('result').value = firstNumber / secondNumber;
+        }
+      }
+    </script>
+  </body>
+</html>
